@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .video-container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none; /* Initially hide the video */
+        }
+        a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        #alertMessage {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #d4edda; /* Green background */
+            color: #155724;
+            display: none; /* Initially hide the alert message */
+        }
+        #emailStatus {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #d4edda;
+            color: #155724;
+            display: none; /* Initially hide the email status */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to SHEild</h1>
+
+    <div class="video-container">
+        <video id="myVideo" controls>
+            <source src="/static/uploads/vi.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <a id="alertButton" href="/alert">Generate Alert</a>
+
+    <div id="alertMessage"></div>
+    <div id="emailStatus"></div>
+
+    <script>
+        document.getElementById('alertButton').addEventListener('click', function() {
+            var alertMessage = document.getElementById('alertMessage');
+            alertMessage.style.display = 'block';
+            alertMessage.textContent = 'Monitering...';
+
+            var video = document.getElementById('myVideo');
+            video.style.display = 'block';
+            video.play();
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/alert', true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    alertMessage.textContent = 'Alert generated.';
+                    document.getElementById('emailStatus').style.display = 'block';
+                    document.getElementById('emailStatus').textContent = 'Generating Report...';
+                } else {
+                    alertMessage.textContent = 'Failed to generate alert.';
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
