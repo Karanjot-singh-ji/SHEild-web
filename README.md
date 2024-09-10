@@ -8,7 +8,7 @@
 ## 🚨 Project Overview
 **SHEild** is an open-source, non-profit initiative dedicated to creating a safer environment for women in workplaces and society. By leveraging advanced machine learning and computer vision technologies, SHEild detects incidents of sexual harassment in real-time via CCTV cameras, automatically generating reports that are sent to the nearest authorities for swift action.
 
-**SHEild** was started by Sahil Thakur, Pranav Sharma, and Karanjot Singh Malhotra, Ashish , Sneha , Vimal Thakur who share a common vision of utilizing technology to ensure women’s safety and empower their contributions to society.
+**SHEild** was started by Sahil Thakur, Pranav Sharma, Karanjot Singh Malhotra, Ashish , Sidak , Vanshika who share a common vision of utilizing technology to ensure women’s safety and empower their contributions to society.
 
 ## 📝 Problem Statement
 Women play a critical role in every sector of society, contributing to fields such as healthcare, technology, education, and beyond. However, the reality is stark: data from 2018 to 2021 reveals that 27,000 to 161,000 cases of sexual harassment in workplaces were officially reported. The true number is likely much higher, as many cases go unreported due to fear of judgment or other societal pressures.
